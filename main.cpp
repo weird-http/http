@@ -3,6 +3,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <Types.h>
+#include <Exception/RuntimeException.h>
 
 void error(const char *msg)
 {
@@ -63,6 +64,12 @@ int main(int argc, char* argv[])
 //        error("ERROR writing to socket");
 //    }
     UnsignedInt16 x = 12345;
+
+    try {
+        throw Weird::Http::Exception::RuntimeException("message");
+    } catch (Weird::Http::Exception::ExceptionInterface &e) {
+        std::cout << e.getMessage();
+    }
 
     std::cout << x;
     return 0;

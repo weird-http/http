@@ -4,18 +4,14 @@
 using namespace Weird::Http::Exception;
 
 Exception::Exception(
-    const std::string message,
+    const std::string& message,
     const int code,
     const ExceptionInterface* innerException
-) {
-    std::cerr << message;
-
-    if (NULL != innerException) {
-        std::cerr << " (inner exception message: " << innerException->getMessage() << ")";
-    }
+) : code(code), message(message) {
+    this->innerException = innerException;
 }
 
 const std::string Exception::getMessage() const
 {
-    return this->what();
+    return this->message;
 }

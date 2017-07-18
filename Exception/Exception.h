@@ -9,10 +9,12 @@ namespace Weird::Http::Exception
     {
         protected:
             const std::string message;
+            const int code;
+            const ExceptionInterface* innerException;
 
         public:
             Exception(
-                const std::string message,
+                const std::string& message,
                 const int code = -1,
                 const ExceptionInterface* innerException = NULL
             );

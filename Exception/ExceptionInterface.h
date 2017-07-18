@@ -5,7 +5,7 @@
 
 namespace Weird::Http::Exception
 {
-    class ExceptionInterface : public std::exception
+    class ExceptionInterface
     {
         public:
             virtual const std::string getMessage() const = 0;

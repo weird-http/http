@@ -9,8 +9,8 @@ namespace Weird::Http::Exception
     {
         public:
             InvalidArgumentException(
-                const std::string expected,
-                const std::string got,
+                const std::string& expected,
+                const std::string& got,
                 const int code,
                 const ExceptionInterface* innerException
             );
