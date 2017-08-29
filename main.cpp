@@ -4,6 +4,11 @@
 #include <netinet/in.h>
 #include <Types.h>
 #include <Exception/RuntimeException.h>
+#include <Loop/EventLoop.h>
+#include <Loop/IdleWatcher.h>
+#include <Loop/IoWatcher.h>
+
+extern Weird::Loop::EventLoop& sEventLoop;
 
 void error(const char *msg)
 {
@@ -13,6 +18,18 @@ void error(const char *msg)
 
 int main(int argc, char* argv[])
 {
+    Weird::Loop::IdleWatcher watcher;
+    Weird::Loop::IoWatcher ioWatcher(STDIN_FILENO, []() {
+        char buf[16256];
+        memset(buf, 0, 16256);
+        read(STDIN_FILENO, buf, 16255);
+
+        std::cout << buf;
+    });
+
+    sEventLoop.getInstance().addWatcher(&watcher);
+    sEventLoop.getInstance().addWatcher(&ioWatcher);
+    sEventLoop.getInstance().run();
 //    int sockfd;
 //    int newsockfd;
 //    int port;
