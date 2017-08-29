@@ -3,7 +3,7 @@
 
 #include "Exception.h"
 
-namespace Weird::Http::Exception
+namespace Weird::Exception
 {
     class InvalidArgumentException : public Exception
     {
@@ -12,7 +12,7 @@ namespace Weird::Http::Exception
                 const std::string& expected,
                 const std::string& got,
                 const int code,
-                const ExceptionInterface* innerException
+                const ExceptionInterface* innerException = NULL
             );
     };
 }

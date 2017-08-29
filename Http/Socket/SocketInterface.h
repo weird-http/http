@@ -1,12 +1,14 @@
 #ifndef WEIRD_SOCKET_INTERFACE_H
 #define WEIRD_SOCKET_INTERFACE_H
 
+#include <Types.h>
+
 namespace Weird::Http::Socket
 {
     class SocketInterface
     {
-        protected:
-            virtual void bind() = 0;
+        public:
+            virtual void doBind() = 0;
     };
 }
 

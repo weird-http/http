@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Weird::Http::Exception
+namespace Weird::Exception
 {
     class ExceptionInterface
     {

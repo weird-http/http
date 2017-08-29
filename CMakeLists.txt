@@ -12,7 +12,7 @@ add_custom_target(
     WORKING_DIRECTORY ../libev
 )
 
-set(SOURCE_FILES main.cpp Socket/Socket.cpp Socket/SocketInterface.cpp Exception/ExceptionInterface.cpp Exception/Exception.cpp Exception/InvalidArgumentException.cpp Exception/RuntimeException.cpp Loop/EventLoop.cpp Loop/IdleWatcher.cpp Loop/IoWatcher.cpp)
+set(SOURCE_FILES main.cpp Types.h Http/Socket/Socket.cpp Http/Socket/SocketInterface.cpp Exception/ExceptionInterface.cpp Exception/Exception.cpp Exception/InvalidArgumentException.cpp Exception/NullPointerException.cpp Exception/RuntimeException.cpp Loop/EventLoop.cpp Loop/IdleWatcher.cpp Loop/IoWatcher.cpp)
 add_executable(weird ${SOURCE_FILES})
 target_link_libraries(weird ${LIBRARY_OUTPUT_PATH}/lib/libev.a)
 add_dependencies(weird lib_libev)

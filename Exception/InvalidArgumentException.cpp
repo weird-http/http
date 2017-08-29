@@ -1,6 +1,6 @@
 #include "InvalidArgumentException.h"
 
-using namespace Weird::Http::Exception;
+using namespace Weird::Exception;
 
 InvalidArgumentException::InvalidArgumentException(
     const std::string& expected,

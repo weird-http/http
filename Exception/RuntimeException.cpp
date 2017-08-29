@@ -1,8 +1,11 @@
 #include "RuntimeException.h"
 
-using namespace Weird::Http::Exception;
+using namespace Weird::Exception;
 
-RuntimeException::RuntimeException(const std::string& message, int code, const ExceptionInterface *innerException)
-    : Exception(message, code, innerException)
+RuntimeException::RuntimeException(
+    const std::string& message,
+    const int code,
+    const ExceptionInterface* innerException
+) : Exception(message, code, innerException)
 {
 }

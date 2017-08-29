@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Exception.h"
 
-using namespace Weird::Http::Exception;
+using namespace Weird::Exception;
 
 Exception::Exception(
     const std::string& message,

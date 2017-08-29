@@ -3,7 +3,7 @@
 
 #include "ExceptionInterface.h"
 
-namespace Weird::Http::Exception
+namespace Weird::Exception
 {
     class Exception : public ExceptionInterface
     {

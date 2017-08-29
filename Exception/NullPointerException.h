@@ -1,15 +1,14 @@
-#ifndef WEIRD_RUNTIME_EXCEPTION_H
-#define WEIRD_RUNTIME_EXCEPTION_H
+#ifndef WEIRD_NULL_POINTER_EXCEPTION_H
+#define WEIRD_NULL_POINTER_EXCEPTION_H
 
-#include <string>
 #include "Exception.h"
 
 namespace Weird::Exception
 {
-    class RuntimeException : public Exception
+    class NullPointerException : public Exception
     {
         public:
-            RuntimeException(
+            NullPointerException(
                 const std::string& message,
                 const int code,
                 const ExceptionInterface* innerException = NULL
@@ -18,4 +17,4 @@ namespace Weird::Exception
 }
 
 
-#endif //WEIRD_RUNTIME_EXCEPTION_H
+#endif //WEIRD_NULL_POINTER_EXCEPTION_H
